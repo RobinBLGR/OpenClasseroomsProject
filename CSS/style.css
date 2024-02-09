@@ -24,6 +24,9 @@ body {
 }
 
 .main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
     width: 100%;
     max-width: 1440px;
     padding: 0 50px;
@@ -71,8 +74,7 @@ a:hover {
 header {
     display: flex;
     justify-content: space-between;
-    height: 5em;
-    padding-bottom: 30px;
+    height: 79px;
 }
 
 header img {
@@ -102,19 +104,21 @@ header img {
 /****** Main (englobe recherche-filtre, hebergement-populaire, activites ***********/
 main {
     width: 100%;
-    height: 96em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 2em;
+    gap: 35px;
 }
 
 /****** Recherche-filtre (englobe le titre, la barre de recherche et les filtres ***********/
 .recherche-filtre {
-    height: 17.5em;;
+    height: 281px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
 }
 
-h1 {
+.recherche-filtre h1 {
     font-size: 22px;
     margin: 0;
 }
@@ -130,7 +134,7 @@ h1 {
     margin: 0;
 }
 
-h3 {
+.recherche-filtre h3 {
     font-size: 16px;
 }
 
@@ -139,8 +143,6 @@ h3 {
     display: flex;
     width: 377px;
     height: 49px;
-    margin-top: 30px;
-    margin-bottom: 30px;
 }
 
 .fa-location-dot {
@@ -190,7 +192,6 @@ h3 {
     gap: 15px;
     width: 758px;
     box-sizing: border-box;
-    padding-bottom: 30px;
 }
 
 .touches-filtre {
@@ -209,6 +210,7 @@ h3 {
     border-radius: 25px;
     height: 50px;
     padding: 4px 19px 4px 19px;
+    box-sizing: border-box;
 }
 
 .filtre-unique:hover {
@@ -231,7 +233,7 @@ h3 {
 .hebergements-and-populaires {
     display: flex;
     justify-content: space-between;
-    height: 38em;
+    height: 614px;
 }
 
 .hebergements-and-populaires section {
@@ -343,11 +345,12 @@ h3 {
 
 /****** Activites ***********/
 .activites {
-    height: 35em;
+    height: 559px;
     display: flex;
     flex-direction: column;
-    padding: 30px;
     gap: 30px;
+    padding: 30px;
+    box-sizing: border-box;
 }
 
 .activites-cards {
@@ -382,11 +385,11 @@ h3 {
 /****** Footer ***********/
 footer {
     height: 163px;
-    margin-top: 30px;
     padding: 20px;
     display: flex;
     gap: 30px;
     background-color: #d9d9d9;
+    margin-top: 5px;
 }
 
 footer h3 {
@@ -417,21 +420,33 @@ footer h3 {
 /* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) {
     header {
-        height: 5em;
+        height: 79px;
     }
 
+/****** Recherche et filtre Tablette ***********/
     .recherche-filtre {
-        height: 20em;
+        height: 322px;
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
     }
 
     .barre2filtre {
         display: flex;
         flex-direction: column;
+        height: 91px;
+        gap: 20px;
     }
 
+    .filtres {
+        margin: 0;
+    }
+
+/****** Hébergements et populaires Tablette ***********/
     .hebergements-and-populaires {
+        display: flex;
         flex-direction: column;
-        height: 57em;
+        height: 913px;
     }
 
     .hebergements {
@@ -440,12 +455,6 @@ footer h3 {
 
     .populaires {
         width: 100%;
-        margin-top: 50px;
-    }
-
-    .activites {
-        height: 24.3em;
-        background-color: crimson;
     }
 
     .populaires-cards {
@@ -466,23 +475,72 @@ footer h3 {
         font-size: 13px;
     }
 
+/****** Activités Tablette ***********/
+    .activites {
+        height: 390px;
+    }
+
+    .activites-cards .card {
+        height: 270px;
+    }
+
+    .activites-cards img {
+        height: 200px;
+    }
+
+/****** Footer Tablette ***********/
     footer {
-        height: 10.2em;
+        height: 163px;
     }
 
 }
 
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
+    .main-container {
+        padding: 0;
+        width: 375px; 
+    }
+
+/****** Header Phone ***********/
     header {
-        height: 7.2em;
+        height: 115px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
     }
 
+    .nav {
+        width: 100%;
+        border-bottom: #d9d9d9 1px solid;
+        height: 36px;
+        box-sizing: border-box;
+    }
+
+    .nav:hover {
+        border-bottom: #0065FC 1px solid;
+    }  
+    
+    .liens-menu {
+        padding: 0;
+    }
+
+/****** Barre de recherche Phone ***********/
     .recherche-filtre {
-        height: 27em;
+        height: 432px;
+        padding-left: 20px;
+        padding-right: 20px;
+        display: flex;
+        justify-content: center;
     }
 
-    /****** Barre de recherche ***********/
+    .message-recherche {
+        height: 79px;
+        gap: 8px;
+    }
+
     .barre2recherche {
         border: 1px #F2F2F2 solid;
         width: 335px;
@@ -492,7 +550,6 @@ footer h3 {
     .barre-rechercher {
         width: 236px;
     }
-    
 
     .bouton-rechercher {
         display: none;
@@ -511,46 +568,58 @@ footer h3 {
         color: white;
     }
 
-/****** Barre de filtre ***********/
+/****** Barre de filtre Phone ***********/
     .barre2filtre {
         display: flex;
         flex-direction: column;
+        width: 335px;
+        height: 161px;
     }
 
     .touches-filtre {
         display: flex;
         flex-wrap: wrap;
+        gap: 10px;
     }
 
+    .filtre-unique {
+        width: 162.5px;
+    }
+
+/****** Hébergements et populaires Phone  ***********/
     .hebergements-and-populaires {
         display: flex;
         flex-direction: column-reverse;
         gap: 15px;
-        height: 126.2em;
+        height: 2019px;
     }
 
-    .hebergements-and-populaires .hebergements {
-        background-color: darksalmon;
-    }
-
-/****** Populaires ***********/
     .hebergements-and-populaires .populaires {
         height: 569px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 30px 20px 30px 20px;
     }
 
     .populaires-cards {
         display: flex;
         flex-direction: column;
+        width: 335px;
+        height: 146px;
+        gap: 15px;
+    }
+
+    .populaires-cards .card {
+        margin: 0;
     }
 
     .populaires-cards a {
         width: 100%;
     }
 
-/****** Hébergements ***********/
     .hebergements-and-populaires .hebergements {
         height: 1435px;
-        width: 100%;
     }
 
     .hebergements-cards {
@@ -563,9 +632,9 @@ footer h3 {
         width: 100%;
     }
 
-/****** Activites ***********/
+/****** Activites Phone ***********/
     .activites {
-        height: 60.3em;
+        height: 965px;
     }
 
     .activites-cards {
@@ -578,8 +647,9 @@ footer h3 {
         width: 100%;
     }
 
+/****** Footer Phone ***********/
     footer {
-        height: 28.8em;
+        height: 461px;
         display: flex;
         flex-direction: column;
     }
