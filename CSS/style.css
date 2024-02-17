@@ -248,7 +248,7 @@ main {
 }
 
 /****** Hebergements ***********/
-.hebergements {
+#hebergements {
     width: 65%;
     display: flex;
     flex-direction: column;
@@ -256,8 +256,11 @@ main {
     padding: 30px;
 }
 
-.hebergements h3 {
+#hebergements h3 {
     margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .hebergements-title {
@@ -268,7 +271,7 @@ main {
 }
 
 .hebergements-cards a {
-    width: 33%;
+    width: calc(33% - 20px);
 }
 
 .hebergements-cards {
@@ -356,7 +359,7 @@ main {
 }
 
 /****** Activites ***********/
-.activites {
+#activites {
     height: 559px;
     display: flex;
     flex-direction: column;
@@ -465,7 +468,7 @@ footer h3 {
         height: 913px;
     }
 
-    .hebergements {
+    #hebergements {
         width: 100%;
     }
 
@@ -497,7 +500,7 @@ footer h3 {
     }
 
 /****** Activités Tablette ***********/
-    .activites {
+    #activites {
         height: 390px;
     }
 
@@ -539,13 +542,21 @@ footer h3 {
         height: 36px;
         box-sizing: border-box;
     }
-
-    .nav:hover {
-        border-bottom: #0065FC 1px solid;
-    }  
     
     .liens-menu {
         padding: 0;
+    }
+
+    .liens-menu {
+        border-bottom: transparent 1px solid;
+        padding-bottom: 16px;
+        text-align: center;
+    }
+    
+    .liens-menu:hover {
+        border-bottom: 1px solid #0065FC;
+        border-top: none;
+        text-align: center;
     }
 
 /****** Barre de recherche Phone ***********/
@@ -648,7 +659,7 @@ footer h3 {
         width: 100%;
     }
 
-    .hebergements-and-populaires .hebergements {
+    .hebergements-and-populaires #hebergements {
         height: 1435px;
         display: flex;
         flex-direction: column;
@@ -670,7 +681,7 @@ footer h3 {
     }
 
 /****** Activites Phone ***********/
-    .activites {
+    #activites {
         height: 965px;
         box-sizing: border-box;
     }
